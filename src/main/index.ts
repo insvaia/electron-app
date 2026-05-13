@@ -3,12 +3,18 @@ import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
 
+let mainWindow: BrowserWindow
+
 function createWindow(): void {
   // Create the browser window.
-  const mainWindow = new BrowserWindow({
-    width: 900,
+  mainWindow = new BrowserWindow({
+    minHeight: 670,
+    minWidth: 900,
     height: 670,
     show: false,
+    frame: false, // 无边框
+    resizable: false, // 禁止调整窗口大小
+    // titleBarStyle: 'hidden' // 隐藏标题栏,
     autoHideMenuBar: true,
     ...(process.platform === 'linux' ? { icon } : {}),
     webPreferences: {

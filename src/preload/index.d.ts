@@ -5,4 +5,5 @@ declare global {
     electron: ElectronAPI
     api: unknown
   }
+  var electron: ElectronAPI
 }

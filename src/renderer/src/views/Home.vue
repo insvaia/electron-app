@@ -46,7 +46,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import passwordForm from '@views/login/components/passwordForm.vue'
 import PhoneForm from './login/components/PhoneForm.vue'
 </script>
@@ -57,6 +57,7 @@ import PhoneForm from './login/components/PhoneForm.vue'
   background-color: #fff;
   display: flex;
   .login_adv {
+    -webkit-app-region: drag;
     background: url('../assets/images/auth_banner.jpg') no-repeat;
     width: 40%;
     position: relative;
